@@ -4,31 +4,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personle website</title>
+    <title>Services - ASHMIL MK</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
    <div class="hero">
-       <nav>
-           <img src="" class="">
-           <ul>
-               <li><a href="index.html">HOME</a></li>
-               <li><a href="about.html">ABOUT</a></li>
-               <li><a href="profile.html">PORTFOLIO</a></li>
-              <li><a class="servies" href="#">SERVICES</a></li>
-               <li><a href="hireme.html">HIRE ME</a></li>
-           </ul>
+       <nav id="navbar">
+           <div class="nav-container">
+               <a href="index.html" class="logo">ASHMIL<span> MK</span></a>
+               <div class="menu-toggle" id="mobile-menu">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+               </div>
+               <ul class="nav-menu" id="nav-menu">
+                   <li><a href="index.html" class="nav-link">HOME</a></li>
+                   <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                   <li><a href="profile.html" class="nav-link">PORTFOLIO</a></li>
+                   <li><a href="#" class="nav-link active">SERVICES</a></li>
+                   <li><a href="hireme.html" class="nav-link">HIRE ME</a></li>
+               </ul>
+           </div>
         </nav>
-        <div class="dete">
-            <h1>I,m ASHMIL<span> MK</span></h1>
-            <p>MALAPPURAM
-                <br>details and work in web development
-            </p>
-            <a href="#">DOWNLOAD CV</a>
-        </div>
-        <div class="">
-            <img src="" class="">
-        </div>
-   </div> 
+        
+        <section class="services-section">
+            <div class="services-container">
+                <h1>SERV<span class="highlight">I</span>CES</h1>
+                <p>
+                    We help you deal with problems and find simple, effective solutions that make things easier.<br>
+                    Itself, because of its nature, brings some kind of pleasure. It is a source of great suffering, but also reveals the true nature of enduring hardship and pleasure.<br>
+                    We provide high-quality services designed to meet your needs. Our solutions are crafted with care, ensuring exceptional results and a smooth user experience.
+                </p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="https://img.icons8.com/emoji/96/rocket-emji.png" alt="Full-stack Development Icon">
+                        <h3>FULL-STACK DEVELOPMENT</h3>
+                        <p>
+                            Web development refers to the process of designing, building, and maintaining websites and web applications that run on internet or intranet environments. It encompasses both the technical implementation and user experience design required to deliver functional, scalable, and secure digital platforms.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://img.icons8.com/emoji/96/rocket-emji.png" alt="Game Development Icon">
+                        <h3>GAME DEVELOP</h3>
+                        <p>
+                            Game development is the process of designing, building, and deploying interactive digital experiences for entertainment, education, or simulation. It combines software engineering, graphic design, sound production, and user experience to create immersive environments across platforms like PC, mobile, console, and web.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://img.icons8.com/emoji/96/rocket-emji.png" alt="Cloud Services Icon">
+                        <h3>CLOUD SERVICES</h3>
+                        <p>
+                            Cloud services refer to the delivery of computing resources—such as servers, storage, databases, networking, software, and analytics—over the internet ("the cloud"). These services enable organizations to scale operations, reduce infrastructure costs, and accelerate innovation by accessing resources on-demand without owning physical hardware.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://img.icons8.com/emoji/96/rocket-emji.png" alt="UI & UX Design Icon">
+                        <h3>UI & UX DESIGN</h3>
+                        <p>
+                            UI (User Interface) and UX (User Experience) are two interrelated disciplines focused on how users interact with digital products. While UI deals with the visual and interactive elements, UX focuses on the overall experience, usability, and satisfaction a user has when using a system.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+   </div>
+
+   <script>
+       // Mobile Navigation Toggle
+       const mobileMenu = document.getElementById('mobile-menu');
+       const navMenu = document.getElementById('nav-menu');
+       const navbar = document.getElementById('navbar');
+
+       mobileMenu.addEventListener('click', () => {
+           mobileMenu.classList.toggle('active');
+           navMenu.classList.toggle('active');
+       });
+
+       // Close mobile menu when clicking on a link
+       document.querySelectorAll('.nav-link').forEach(link => {
+           link.addEventListener('click', () => {
+               mobileMenu.classList.remove('active');
+               navMenu.classList.remove('active');
+           });
+       });
+
+       // Navbar scroll effect
+       window.addEventListener('scroll', () => {
+           if (window.scrollY > 50) {
+               navbar.classList.add('scrolled');
+           } else {
+               navbar.classList.remove('scrolled');
+           }
+       });
+   </script>
 </body>
 </html>

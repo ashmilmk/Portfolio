@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASHMIL MK - Software Engineer & Developer. Full-stack development, game development, cloud services, and UI/UX design.">
+    <meta name="keywords" content="web developer, software engineer, full-stack developer, portfolio">
+    <meta name="author" content="ASHMIL MK">
+    <title>ASHMIL MK | Personal Portfolio</title>
+    <link rel="stylesheet" href="styles-onepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fixed Top Navigation -->
+    <nav class="top-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                ASHMIL<span> MK</span>
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" 
+                   class="nav-link" 
+                   data-section="home"
+                   aria-label="Go to home section"
+                   aria-current="page">HOME</a>
+                <a href="#about" 
+                   class="nav-link" 
+                   data-section="about"
+                   aria-label="Go to about section">ABOUT</a>
+                <a href="#portfolio" 
+                   class="nav-link" 
+                   data-section="portfolio"
+                   aria-label="Go to portfolio section">PORTFOLIO</a>
+                <a href="#services" 
+                   class="nav-link" 
+                   data-section="services"
+                   aria-label="Go to services section">SERVICES</a>
+                <a href="#contact" 
+                   class="nav-link" 
+                   data-section="contact"
+                   aria-label="Go to contact section">HIRE ME</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="theme-icon" id="themeIcon">🌙</span>
+    </button>
+
+    <!-- Main Content Container with Scroll Snap -->
+    <main class="main-container" id="mainContainer">
+        <!-- Section 1: Hero/Home -->
+        <section id="home" class="section hero-section" aria-labelledby="hero-heading">
+            <div class="section-content">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="hero-heading" class="hero-title">
+                            I'm <span class="highlight">ASHMIL MK</span>
+                        </h1>
+                        <p class="hero-description">
+                            This is my official webpage to showcase all details and work in web development.
+                            I create extraordinary user experiences and contribute to open source projects.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#contact" class="cta-button" aria-label="Go to contact section">Get In Touch</a>
+                            <a href="\resume\ASHMIL_M_K_Resume.pdf" class="cta-button secondary" aria-label="Download CV" download>Download CV</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/profille.jpg" alt="ASHMIL MK Profile Picture" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: About -->
+        <section id="about" class="section about-section" aria-labelledby="about-heading">
+            <div class="section-content">
+                <header class="section-header">
+                    <h2 id="about-heading" class="section-title">
+                        <span class="highlight">A</span>BOUT ME
+                    </h2>
+                </header>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/abutpic.png" alt="ASHMIL MK About Picture" loading="lazy">
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            I'm a self learner who keeps myself updated on the latest technologies in the World Wide Web. 
+                            It is my sole passion to develop user experiences that are extraordinary and out of the world. 
+                            I devote myself in contributing to the open source during my leisure time.
+                        </p>
+                        <p>
+                            My job is to build your mobile apps so that it is functional and user-friendly but at the same time attractive. 
+                            Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. 
+                            My aim is to bring across your message and identity in the most creative way. I created app design for many people.
+                        </p>
+                        <div class="social-links" role="list" aria-label="Social media links">
+                            <a href="https://github.com/ashmilmk" 
+                               class="social-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Visit GitHub profile">
+                                <img src="images/github.png" alt="GitHub">
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://wa.me/9061068948" 
+                               class="social-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Contact via WhatsApp">
+                                <img src="images/whatsapp.jpeg" alt="WhatsApp">
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ashmil-moolamkuzhiyil-699b7524b" 
+                               class="social-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Visit LinkedIn profile">
+                                <img src="images/linkedin.jpeg" alt="LinkedIn">
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://www.instagram.com/ash._mil._" 
+                               class="social-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Visit Instagram profile">
+                                <img src="images/insta.jpeg" alt="Instagram">
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Portfolio/Profile -->
+        <section id="portfolio" class="section portfolio-section" aria-labelledby="portfolio-heading">
+            <div class="section-content">
+                <header class="section-header">
+                    <h2 id="portfolio-heading" class="section-title">
+                        PRO<span class="highlight">F</span>ILE
+                    </h2>
+                </header>
+                <div class="portfolio-card">
+                    <div class="profile-image">
+                        <img src="images/profille.jpg" alt="ASHMIL MK Profile Picture" loading="lazy">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">ASHMIL <span class="highlight">MK</span></h3>
+                        <p class="profile-title">Software Engineer & Developer</p>
+                        <div class="education-section">
+                            <h4 class="education-heading">Education</h4>
+                            <div class="education-item">
+                                <p><strong>Diploma in Computer Science</strong></p>
+                                <p>Completed in First Class</p>
+                                <p>Govt Polytechnic College Thirurangadi</p>
+                            </div>
+                            <div class="education-item">
+                                <p><strong>B-Tech in Computer Science</strong></p>
+                                <p>Ongoing Final Year</p>
+                                <p>MEA Engineering College Perithalmanna</p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="contact-button" aria-label="Go to contact section">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Services -->
+        <section id="services" class="section services-section" aria-labelledby="services-heading">
+            <div class="section-content">
+                <header class="section-header">
+                    <h2 id="services-heading" class="section-title">
+                        SERV<span class="highlight">I</span>CES
+                    </h2>
+                    <p class="section-description">
+                        We help you deal with problems and find simple, effective solutions that make things easier. 
+                        We provide high-quality services designed to meet your needs. Our solutions are crafted with care, 
+                        ensuring exceptional results and a smooth user experience.
+                    </p>
+                </header>
+                <div class="services-grid" role="list" aria-label="Services offered">
+                    <article class="service-card" role="listitem">
+                        <div class="service-icon">
+                            <img src="https://img.icons8.com/emoji/96/rocket-emji.png" alt="Full-stack Development Icon" loading="lazy">
+                        </div>
+                        <h3 class="service-title">Full-Stack Development</h3>
+                        <p class="service-description">
+                            Web development refers to the process of designing, building, and maintaining websites and web applications 
+                            that run on internet or intranet environments. It encompasses both the technical implementation and user 
+                            experience design required to deliver functional, scalable, and secure digital platforms.
+                        </p>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="service-icon">
+                            <img src="https://img.icons8.com/emoji/96/rocket-emji.png" alt="Game Development Icon" loading="lazy">
+                        </div>
+                        <h3 class="service-title">Game Development</h3>
+                        <p class="service-description">
+                            Game development is the process of designing, building, and deploying interactive digital experiences 
+                            for entertainment, education, or simulation. It combines software engineering, graphic design, sound 
+                            production, and user experience to create immersive environments across platforms like PC, mobile, console, and web.
+                        </p>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="service-icon">
+                            <img src="https://img.icons8.com/emoji/96/rocket-emji.png" alt="Cloud Services Icon" loading="lazy">
+                        </div>
+                        <h3 class="service-title">Cloud Services</h3>
+                        <p class="service-description">
+                            Cloud services refer to the delivery of computing resources—such as servers, storage, databases, networking, 
+                            software, and analytics—over the internet ("the cloud"). These services enable organizations to scale operations, 
+                            reduce infrastructure costs, and accelerate innovation by accessing resources on-demand without owning physical hardware.
+                        </p>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="service-icon">
+                            <img src="https://img.icons8.com/emoji/96/rocket-emji.png" alt="UI & UX Design Icon" loading="lazy">
+                        </div>
+                        <h3 class="service-title">UI & UX Design</h3>
+                        <p class="service-description">
+                            UI (User Interface) and UX (User Experience) are two interrelated disciplines focused on how users interact 
+                            with digital products. While UI deals with the visual and interactive elements, UX focuses on the overall 
+                            experience, usability, and satisfaction a user has when using a system.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Contact/Hire Me -->
+        <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+            <div class="section-content">
+                <header class="section-header">
+                    <h2 id="contact-heading" class="section-title">
+                        GET <span class="highlight">IN</span> TOUCH
+                    </h2>
+                    <p class="section-description">
+                        For general inquiries, training and booking queries, please feel free to reach out below. 
+                        If you wish to make an appointment, you can do this directly through our booking system.
+                    </p>
+                </header>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <strong>Phone:</strong>
+                                <a href="tel:+919061068948" aria-label="Call phone number">+91-9061068948</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Email:</strong>
+                                <a href="mailto:mkashmil10@gmail.com" aria-label="Send email">mkashmil10@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-social" role="list" aria-label="Social media links">
+                            <a href="https://github.com/ashmilmk" 
+                               class="social-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Visit GitHub profile"
+                               role="listitem">
+                                <img src="images/github.png" alt="GitHub">
+                            </a>
+                            <a href="https://wa.me/9061068948" 
+                               class="social-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Contact via WhatsApp"
+                               role="listitem">
+                                <img src="images/whatsapp.jpeg" alt="WhatsApp">
+                            </a>
+                            <a href="https://www.linkedin.com/in/ashmil-moolamkuzhiyil-699b7524b" 
+                               class="social-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Visit LinkedIn profile"
+                               role="listitem">
+                                <img src="images/linkedin.jpeg" alt="LinkedIn">
+                            </a>
+                            <a href="https://www.instagram.com/ash._mil._" 
+                               class="social-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Visit Instagram profile"
+                               role="listitem">
+                                <img src="images/insta.jpeg" alt="Instagram">
+                            </a>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm" aria-labelledby="contact-heading">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required" aria-label="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required aria-required="true" aria-label="First name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" aria-label="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="required" aria-label="required">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true" aria-label="Email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" aria-label="Phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" aria-label="Message subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message <span class="required" aria-label="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" required aria-required="true" aria-label="Message content"></textarea>
+                        </div>
+                        <button type="submit" class="submit-button" aria-label="Submit contact form">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script-onepage.js"></script>
+</body>
+</html>

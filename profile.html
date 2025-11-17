@@ -4,56 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personle website</title>
+    <title>Portfolio - ASHMIL MK</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
    <div class="hero">
-       <nav>
-           <img src="" class="">
-           <ul>
-               <li><a href="index.html">HOME</a></li>
-               <li><a href="about.html">ABOUT</a></li>
-               <li><a class="profile" href="#">PORTFOLIO</a></li>
-               <li><a href="servies.html">SERVICES</a></li>
-               <li><a href="hireme.html">HIRE ME</a></li>
-           </ul>
+       <nav id="navbar">
+           <div class="nav-container">
+               <a href="index.html" class="logo">ASHMIL<span> MK</span></a>
+               <div class="menu-toggle" id="mobile-menu">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+               </div>
+               <ul class="nav-menu" id="nav-menu">
+                   <li><a href="index.html" class="nav-link">HOME</a></li>
+                   <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                   <li><a href="#" class="nav-link active">PORTFOLIO</a></li>
+                   <li><a href="servies.html" class="nav-link">SERVICES</a></li>
+                   <li><a href="hireme.html" class="nav-link">HIRE ME</a></li>
+               </ul>
+           </div>
         </nav>
-        <h2 style="text-align:center"> Profile Card</h2>
-        <div class="card">
-            <img src="images\profille.jpg" alt="John" style="inline-size:100%">
-            <h1>ASHMIL MK</h1>
-            <p class="title">Software Engineer & Developer</p>
-            <p>education</p>
-            <p>Diploma in computer science</p>
-            <div class="socialicon">
-                <div class="logos">
-                    <img src="images\whatsapp.jpeg">
-                    <a href="#">
-                        <img src="images\link.png">
-                    </a>
+        
+        <div class="portfolio-section">
+            <div class="portfolio-container">
+                <div class="portfolio-header">
+                    <h2>PRO<span class="highlight">F</span>ILE</h2>
                 </div>
-                <div class="logos">
-                    <img src="images\linkedin.jpeg">
-                    <a href="#">
-                        <img src="images\link.png">
-                    </a>
-                </div>
-                <div class="logos">
-                    <img src="images\insta.jpeg">
-                    <a href="#">
-                        <img src="images\link.png">
-                    </a>
-                </div>
-                <div class="logos">
-                    <img src="images\github.png">
-                    <a href="#">
-                        <img src="images\link.png">
-                    </a>
+                <div class="card">
+                    <img src="images/profille.jpg" alt="ASHMIL MK Profile Picture">
+                    <h1>ASHMIL <span class="highlight">MK</span></h1>
+                    <p class="title">Software Engineer & Developer</p>
+                    <div class="education-section">
+                        <p><strong>EDUCATION</strong></p>
+                        <p>Diploma in computer science<br>[completed in First class]<br>Govt Polytechnic College Thirurangadi</p>
+                        <p>B-tech in computer science<br>[on going final year]<br>MEA Engineering College Perithalmanna</p>
+                    </div>
+                    <p><a href="hireme.html"><button>Contact</button></a></p>
                 </div>
             </div>
-            <p><button>Contact</button></p>
         </div>
-   </div> 
+   </div>
+
+   <script>
+       // Mobile Navigation Toggle
+       const mobileMenu = document.getElementById('mobile-menu');
+       const navMenu = document.getElementById('nav-menu');
+       const navbar = document.getElementById('navbar');
+
+       mobileMenu.addEventListener('click', () => {
+           mobileMenu.classList.toggle('active');
+           navMenu.classList.toggle('active');
+       });
+
+       // Close mobile menu when clicking on a link
+       document.querySelectorAll('.nav-link').forEach(link => {
+           link.addEventListener('click', () => {
+               mobileMenu.classList.remove('active');
+               navMenu.classList.remove('active');
+           });
+       });
+
+       // Navbar scroll effect
+       window.addEventListener('scroll', () => {
+           if (window.scrollY > 50) {
+               navbar.classList.add('scrolled');
+           } else {
+               navbar.classList.remove('scrolled');
+           }
+       });
+   </script>
 </body>
 </html>
