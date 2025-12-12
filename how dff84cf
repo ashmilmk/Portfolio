@@ -1,0 +1,24 @@
+[33mcommit 8de61c659da64c5b9c227804059a9a33f53d10d1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: 2c65cf8 dff84cf
+Author: ASHMIL M K <mkashmil10@gmail.com>
+Date:   Fri Dec 12 10:51:07 2025 +0530
+
+    Merged old and new versions — keep both
+
+[33mcommit dff84cf815026a248b2cb8c42a0edcddc93168f7[m
+Author: ASHMIL M K <mkashmil10@gmail.com>
+Date:   Fri Dec 12 10:26:18 2025 +0530
+
+    change into the resposive layout
+
+[33mcommit 2c65cf8ebc05ebe57ef81fcc8adb07a434a4b21b[m
+Author: ASHMIL M K <mkashmil10@gmail.com>
+Date:   Mon Nov 17 07:30:01 2025 +0530
+
+    Initial portfolio code
+
+[33mcommit 4fc592fc2cae79afd89d405c1f5230f462d112a7[m
+Author: ASHMIL M K <mkashmil10@gmail.com>
+Date:   Wed Jul 23 16:05:09 2025 +0530
+
+    initial commit
