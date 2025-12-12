@@ -68,7 +68,7 @@
     
     /* Navigation */
     --nav-height: 70px;
-    --nav-bg: rgba(255, 255, 255, 0.95);
+    --nav-bg: var(--bg-primary);
     --nav-text: var(--text-primary);
     --nav-active: var(--accent-color);
     
@@ -91,7 +91,7 @@
     --current-text-secondary: var(--text-secondary-dark);
     --current-text-muted: var(--text-muted-dark);
     --current-border-color: var(--border-color-dark);
-    --nav-bg: rgba(26, 26, 26, 0.95);
+    --nav-bg: var(--bg-primary-dark);
     --nav-text: var(--text-primary-dark);
 }
 
@@ -149,7 +149,7 @@ body {
     scroll-snap-align: start;
     scroll-snap-stop: always;
     padding: var(--section-padding);
-    padding-top: calc(var(--nav-height) + var(--spacing-xl));
+    padding-bottom: calc(var(--nav-height) + var(--spacing-xl));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,7 +266,7 @@ body {
 }
 
 .hero-image img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-lg);
@@ -630,90 +630,77 @@ body {
 }
 
 /* ============================================
-   TOP NAVIGATION
+   TOP NAVIGATION (Previous Style from about.html)
    ============================================ */
 
-.top-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--current-border-color);
-    z-index: 1000;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-base);
+:root{
+  --navbar-height: 72px; /* adjust if needed */
 }
 
-.top-nav.scrolled {
-    background: var(--nav-bg);
-    box-shadow: var(--shadow-md);
+/* navbar layout */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  z-index: 1000;
+  background: var(--nav-bg, #fff);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
 }
 
 .nav-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: var(--nav-height);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-.nav-logo {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    color: var(--nav-text);
-    text-decoration: none;
-    transition: color var(--transition-base);
+/* logo sizing and alignment */
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
 }
 
-.nav-logo span {
-    color: var(--highlight-color);
+.logo {
+  display: block;
+  height: calc(var(--navbar-height) * 0.65); /* scales with navbar height */
+  width: auto;
+  max-height: 56px;
+  object-fit: contain;
 }
 
-.nav-logo:hover {
-    color: var(--accent-color);
-}
-
+/* ensure nav items don't overlap logo on small screens */
 .nav-menu {
-    display: flex;
-    gap: var(--spacing-md);
-    list-style: none;
-    align-items: center;
+  display: flex;
+  gap: 18px;
+  align-items: center;
 }
 
-.nav-link {
-    color: var(--nav-text);
-    text-decoration: none;
-    font-weight: 500;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--border-radius);
-    transition: all var(--transition-base);
-    position: relative;
-    font-size: var(--font-size-base);
+/* responsive - reduce logo on smaller screens */
+@media (max-width: 768px) {
+  :root { --navbar-height: 56px; }
+  .logo {
+    height: calc(var(--navbar-height) * 0.6);
+    max-height: 40px;
+  }
 }
 
-.nav-link:hover {
-    color: var(--accent-color);
-    background: rgba(52, 152, 219, 0.1);
-}
-
-.nav-link.active {
-    color: var(--nav-active);
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 2px;
-    background: var(--nav-active);
-    border-radius: 1px;
+/* If you hide the full menu on mobile, keep logo visible and left-aligned */
+@media (max-width: 520px) {
+  .nav-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .nav-menu {
+    /* your existing mobile menu styles (for example: hidden/slide-in) */
+  }
 }
 
 /* Mobile Menu Toggle */
@@ -724,15 +711,15 @@ body {
     padding: var(--spacing-xs);
     background: transparent;
     border: none;
-    gap: 4px;
 }
 
 .menu-toggle span {
     width: 25px;
     height: 3px;
     background: var(--nav-text);
+    margin: 3px 0;
+    transition: var(--transition-fast);
     border-radius: 2px;
-    transition: all var(--transition-fast);
 }
 
 .menu-toggle.active span:nth-child(1) {
@@ -747,13 +734,58 @@ body {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
+/* Navigation Menu */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a.nav-link {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-base);
+    position: relative;
+    font-size: var(--font-size-base);
+}
+
+nav ul li a.nav-link:hover {
+    color: var(--accent-color);
+    background: rgba(52, 152, 219, 0.1);
+}
+
+nav ul li a.nav-link.active {
+    color: var(--nav-active);
+}
+
+nav ul li a.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: var(--nav-active);
+    border-radius: 1px;
+}
+
 /* ============================================
    THEME TOGGLE BUTTON
    ============================================ */
 
 .theme-toggle {
     position: fixed;
-    top: var(--spacing-md);
+    bottom: var(--spacing-md);
     right: var(--spacing-md);
     width: 50px;
     height: 50px;
@@ -838,7 +870,7 @@ body {
         display: flex;
     }
     
-    .nav-menu {
+    nav ul {
         position: fixed;
         top: var(--nav-height);
         left: -100%;
@@ -854,19 +886,17 @@ body {
         gap: 0;
     }
     
-    .nav-menu.active {
+    nav ul.active {
         left: 0;
     }
     
-    .nav-link {
-        font-size: var(--font-size-lg);
-        padding: var(--spacing-sm) var(--spacing-lg);
-        width: 100%;
-        text-align: center;
+    nav ul li {
+        margin: var(--spacing-sm) 0;
     }
     
-    .theme-toggle {
-        top: calc(var(--nav-height) + var(--spacing-sm));
+    nav ul li a.nav-link {
+        font-size: 1.2rem;
+        padding: var(--spacing-sm) var(--spacing-lg);
     }
 }
 
@@ -903,7 +933,7 @@ body {
     .theme-toggle {
         width: 40px;
         height: 40px;
-        top: calc(var(--nav-height) + var(--spacing-xs));
+        bottom: var(--spacing-sm);
         right: var(--spacing-sm);
     }
 }
@@ -944,7 +974,7 @@ textarea:focus {
 
 /* Print Styles */
 @media print {
-    .top-nav,
+    #navbar,
     .theme-toggle {
         display: none;
     }
@@ -956,3 +986,175 @@ textarea:focus {
         padding-top: var(--spacing-md);
     }
 }
+.logo {
+        width: 200px;
+        height: 100px;
+        border-radius: 50%;
+}
+
+/* Footer / Company details styled like the provided screenshot */
+.company-section {
+  background: #07080a;
+  color: #e6eef8;
+  padding: 56px 20px 28px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.company-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+/* Left column: logo + newsletter */
+.company-logo {
+  height: 56px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.company-tagline {
+  color: rgba(230,238,248,0.75);
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+
+/* Newsletter */
+.footer-newsletter {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.footer-newsletter input[type="email"]{
+  background: transparent;
+  border: 1.8px solid rgba(255,255,255,0.12);
+  padding: 12px 18px;
+  color: #fff;
+  border-radius: 36px;
+  outline: none;
+  min-width: 0;
+}
+
+.footer-newsletter input::placeholder{
+  color: rgba(255,255,255,0.45);
+}
+
+.btn-subscribe {
+  background: #7EE04A;
+  color: #062018;
+  border: 0;
+  padding: 12px 18px;
+  border-radius: 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* small social buttons */
+.footer-social { margin-top: 6px; display:flex; gap:8px; }
+.social-btn {
+  display:inline-flex;
+  width:36px;
+  height:36px;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,0.04);
+  color: #7ee04a;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight:700;
+}
+
+/* style for specific social buttons */
+.social-btn.fb { /* if you still have fb styling */ }
+.social-btn.ln { /* linkedin */ }
+.social-btn.gh { /* github */ }
+
+/* WhatsApp button style */
+.social-btn.wa {
+  color: #ffffff;
+  background: #25D366; /* WhatsApp green */
+  border-radius: 6px;
+  width:36px;
+  height:36px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* optional: ensure WA button keeps same spacing */
+.footer-social { margin-top: 6px; display:flex; gap:8px; }
+
+/* Center column: services */
+.company-center .company-title,
+.company-right .company-title {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.services-lists {
+  display:flex;
+  gap: 28px;
+}
+.services-col {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: rgba(230,238,248,0.9);
+  font-size: 15px;
+}
+.services-col li {
+  margin: 10px 0;
+  position: relative;
+  padding-left: 18px;
+}
+.services-col li::before{
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: rgba(255,255,255,0.35);
+  font-weight:700;
+}
+
+/* Right column: contact */
+.contact-list { color: rgba(230,238,248,0.95); font-size: 15px; }
+.contact-item { margin: 10px 0; display:flex; gap:10px; align-items:flex-start; }
+.contact-item a { color: rgba(230,238,248,0.95); text-decoration:none; }
+.ci-icon { font-size: 18px; line-height:1; }
+
+/* bottom copyright */
+.company-bottom {
+  max-width: 1200px;
+  margin: 26px auto 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .company-inner { grid-template-columns: 1fr 1fr; }
+  .company-center { order: 2; grid-column: span 2; }
+  .company-right { order: 3; }
+}
+@media (max-width: 560px){
+  .company-inner { grid-template-columns: 1fr; gap: 20px; }
+  .footer-newsletter { grid-template-columns: 1fr; }
+  .btn-subscribe { width: 100%; }
+  .services-lists { flex-direction: column, gap: 10px; }
+  .company-title { font-size: 18px; }
+}
+
+/* accessibility helper */
+.sr-only { position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }

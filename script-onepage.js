@@ -3,7 +3,7 @@
    Minimal JS for Theme Toggle & Active Link Detection
    ============================================ */
 
-(function() {
+   (function() {
     'use strict';
 
     // ============================================
@@ -43,9 +43,9 @@
     // ============================================
     
     const mainContainer = document.getElementById('mainContainer');
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const topNav = document.querySelector('.top-nav');
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const navbar = document.getElementById('navbar');
     const navItems = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section');
     
@@ -67,12 +67,12 @@
     }
     
     // Navbar scroll effect
-    if (mainContainer && topNav) {
+    if (mainContainer && navbar) {
         mainContainer.addEventListener('scroll', function() {
             if (mainContainer.scrollTop > 50) {
-                topNav.classList.add('scrolled');
+                navbar.classList.add('scrolled');
             } else {
-                topNav.classList.remove('scrolled');
+                navbar.classList.remove('scrolled');
             }
         });
     }
