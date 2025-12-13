@@ -180,9 +180,30 @@
             }
             
             if (isValid) {
-                // Form is valid - in production, you would submit to a server
-                alert('Thank you for your message! I will get back to you soon.');
-                contactForm.reset();
+                // Send form data to backend
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+
+                fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        alert('Thank you for your message! I will get back to you soon.');
+                        contactForm.reset();
+                    } else {
+                        alert('Error: ' + result.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to send message. Please try again later.');
+                });
             } else {
                 alert('Please fill in all required fields correctly.\n\n' + errors.join('\n'));
             }
